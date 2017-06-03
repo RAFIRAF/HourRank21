@@ -31,10 +31,16 @@ class JavaSolutionTest extends Specification {
 
     def "test frequency"() {
         when:
-        int result = JavaSolution.frequency([0] as int[], 0)
+        int result = JavaSolution.frequency([0,1,1,2,3] as int[], 4)
+        int result2 = JavaSolution.frequency([0,1,1,2,3] as int[], 0)
+        int result3 = JavaSolution.frequency([0,1,1,2,3] as int[], 1)
+        int result4 = JavaSolution.frequency([0,1,1,2,3] as int[], -1)
 
         then:
         result == 0
+        result2 == 1
+        result3 == 2
+        result4 == 0
     }
 
     def "test main"() {
